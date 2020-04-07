@@ -1,10 +1,10 @@
-export const AUTHORIZE = 'AUTHORIZE';
-export const UNAUTHORIZE = 'UNAUTHORIZE'
+export const AUTHORISE = 'AUTHORISE';
+export const UNAUTHORISE = 'UNAUTHORISE'
 
 export function authUser(user) {
-  return { type: AUTHORIZE, payload: user };
+  return { type: AUTHORISE, payload: user };
 }
 
 export function unauthUser() {
-  return { type: UNAUTHORIZE }
+  return { type: UNAUTHORISE }
 }

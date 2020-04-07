@@ -1,4 +1,4 @@
-import { AUTHORIZE, UNAUTHORIZE } from './actions';
+import { AUTHORISE, UNAUTHORISE } from './actions';
 
 const initialState = {
   user: '',
@@ -7,13 +7,13 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case AUTHORIZE:
+    case AUTHORISE:
       return {
         ...state,
         user: action.payload,
         isAuthorized: true
       };
-    case UNAUTHORIZE:
+    case UNAUTHORISE:
       return {
         ...state,
         user: '',

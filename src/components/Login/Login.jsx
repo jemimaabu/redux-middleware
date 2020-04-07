@@ -1,5 +1,23 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
+
+const InputContainer = styled.div`
+  margin: 1em 0;
+
+  input {
+    border: none;
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+
+  label {
+    vertical-align: middle;
+    display: block;
+    margin-bottom: 5px;
+  }
+`;
 
 export const LoginComponent = (props) => {
   const history = useHistory();
@@ -17,10 +35,10 @@ export const LoginComponent = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input-container">
+      <InputContainer>
         <label htmlFor="name">Name: </label>
         <input type="text" id="name" onChange={handleChange} />
-      </div>
+      </InputContainer>
       <button type="submit">Authorize</button>
     </form>
   );

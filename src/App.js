@@ -3,15 +3,19 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { LoginContainer, LogoutContainer } from './components'
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Average Sans', sans-serif;
+    font-size: 20px;
+  }
+
+  button {
+    padding: 5px 10px;
+    min-width: 75px;
   }
 `
 
@@ -30,6 +34,17 @@ const AppContainer = styled.div`
   }
 `
 
+const StyledMain = styled.main`
+  padding: 20px;
+  width: 50%;
+  max-width: 500px;
+  margin: 20px auto;
+
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+`
+
 function App() {
   return (
     <AppContainer>
@@ -39,7 +54,7 @@ function App() {
           Redux Middleware
         </h1>
       </header>
-      <main>
+      <StyledMain>
         <Router>
           <Route exact path="/">
             <LoginContainer />
@@ -48,7 +63,7 @@ function App() {
             <LogoutContainer />
           </Route>
         </Router>
-      </main>
+      </StyledMain>
     </AppContainer>
   );
 }

@@ -1,5 +1,12 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components'
+import { LoginContainer, LogoutContainer } from './components'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -32,6 +39,16 @@ function App() {
           Redux Middleware
         </h1>
       </header>
+      <main>
+        <Router>
+          <Route exact path="/">
+            <LoginContainer />
+          </Route>
+          <Route path="/user">
+            <LogoutContainer />
+          </Route>
+        </Router>
+      </main>
     </AppContainer>
   );
 }

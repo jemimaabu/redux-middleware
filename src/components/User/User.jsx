@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-export const LogoutComponent = (props) => {
+export const UserComponent = (props) => {
   const history = useHistory();
 
   const handleSubmit = (e) => {

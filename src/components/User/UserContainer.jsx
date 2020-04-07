@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { getState } from "../../store/selectors";
 import { unauthUser } from "../../store/actions";
-import { LogoutComponent } from "./Logout";
+import { UserComponent } from "./User";
 
 const mapStateToProps = () => ({
   state: getState(),
@@ -11,7 +11,7 @@ const mapDispatchToProps = {
   unauthUser,
 };
 
-export const LogoutContainer = connect(
+export const UserContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(LogoutComponent);
+)(UserComponent);

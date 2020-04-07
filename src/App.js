@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components'
-import { LoginContainer, LogoutContainer } from './components'
+import { LoginContainer, UserContainer } from './components'
 import {
   BrowserRouter as Router,
   Route,
@@ -60,7 +60,7 @@ function App() {
             <LoginContainer />
           </Route>
           <Route path="/user">
-            <LogoutContainer />
+            <UserContainer />
           </Route>
         </Router>
       </StyledMain>

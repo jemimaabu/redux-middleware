@@ -4,6 +4,7 @@ import { LoginContainer, UserContainer } from './components'
 import {
   BrowserRouter as Router,
   Route,
+  Redirect
 } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
@@ -35,13 +36,12 @@ const AppContainer = styled.div`
 `
 
 const StyledMain = styled.main`
-  padding: 20px;
   width: 50%;
   max-width: 500px;
   margin: 20px auto;
 
   @media (max-width: 750px) {
-    width: 100%;
+    width: 90%;
   }
 `
 
@@ -59,9 +59,20 @@ function App() {
           <Route exact path="/">
             <LoginContainer />
           </Route>
-          <Route path="/user">
-            <UserContainer />
+          <Route exact path="/login">
+            <LoginContainer />
           </Route>
+          <Route
+            path="/user"
+            render={() => (
+              localStorage.getItem('user') ?
+                <UserContainer /> :
+                <Redirect to={{
+                  pathname: '/login',
+                  state: { status: 'Slow down there buckaroo, you need to log in first' }
+                }} />
+            )}
+          />
         </Router>
       </StyledMain>
     </AppContainer>

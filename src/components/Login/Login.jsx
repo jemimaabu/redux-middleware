@@ -25,6 +25,7 @@ const StyledWarning = styled.p`
 
 export const LoginComponent = (props) => {
   const history = useHistory();
+  const { status } = history.location.state ? history.location.state : "";
   const [name, setName] = useState("");
 
   const handleChange = (e) => {
@@ -39,9 +40,7 @@ export const LoginComponent = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {history.location.state.status && (
-        <StyledWarning>{history.location.state.status}</StyledWarning>
-      )}
+      {status && <StyledWarning>{status}</StyledWarning>}
       <InputContainer>
         <label htmlFor="name">Name: </label>
         <input type="text" id="name" onChange={handleChange} />

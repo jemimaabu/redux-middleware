@@ -1,6 +1,6 @@
 # redux-middleware
 
-A presentation on Redux Middleware for React Applications.
+A presentation on Redux middleware for React applications.
 
 Demo: [redux-middleware-demo.netlify.com](https://redux-middleware-demo.netlify.com)
 
